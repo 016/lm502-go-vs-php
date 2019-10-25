@@ -6,24 +6,23 @@
  */
 class ConsoleController extends Controller{
 
-	public function actionDbTest(){
+    public function actionDbTest(){
 
-	    $maxRun = 50000;
+        $maxRun = 50000;
 
         echo "PHP CLI Db Test $maxRun times! \n\n";
-        
+
         $startTime = microtime(true);
-        
-        
+
+
         $sum = 0;
         $cnt = 0;
-        
+
         for ($i = 0; $i < $maxRun; $i++){
             $tmpId = mt_rand(1, 30);
             
-//             echo "loading.... $tmpId \n";
             //AR
-//             $l = AppLocation::find()->where(['l_id'=>$tmpId])->one();
+            //$l = AppLocation::find()->where(['l_id'=>$tmpId])->one();
 
             //DAO
             $sql = 'select * from app_location where l_id = :l_id';
@@ -43,19 +42,19 @@ class ConsoleController extends Controller{
             
             $cnt ++;
         }
-        
-        
-        
+
+
+
         $endTime = microtime(true);
         echo ">> start $startTime \n";
         echo ">> end $endTime \n";
-        
+
         $diff = $endTime - $startTime;
-        
-        
+
+
         echo "use time : $diff sum: $sum count:$cnt \n\n";
-        
-        
+
+
         
         
         
