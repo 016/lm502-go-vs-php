@@ -1,3 +1,11 @@
+/**
+ * 
+ * run with Yii 2.0 framework's path console/controllers
+ * @author Lee
+ *
+ */
+class ConsoleController extends Controller{
+
 	public function actionDbTest(){
 
 	    $maxRun = 50000;
@@ -53,3 +61,4 @@
         
         
     }
+}
